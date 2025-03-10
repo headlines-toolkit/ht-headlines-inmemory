@@ -17,7 +17,7 @@ The `InMemoryHtHeadlinesClient` class provides the following features, mirroring
 
 This package is an in-memory implementation and does not require any external setup or dependencies beyond the `ht_headlines_client` package.  It's designed to be used as a drop-in replacement for other `HtHeadlinesClient` implementations during testing.
 
-To use this package, add `ht_headlines_client` as a dependency in your `pubspec.yaml` file.
+To use this package, add `ht_headlines_inmemory` as a dependency in your `pubspec.yaml` file.
 
 ```yaml
 dependencies:
