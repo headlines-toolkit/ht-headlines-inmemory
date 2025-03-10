@@ -2,7 +2,7 @@ name: ht_headlines_inmemory
 description: in-memory implementation of the `HtHeadlinesClient` interface. It's primarily intended for testing and development purposes.
 version: 1.0.0
 publish_to: none
-repository: https://github.com/Headlines-Toolkit/ht-headlines-client
+repository: https://github.com/Headlines-Toolkit/ht-headlines-inmemory
 
 environment:
   sdk: ^3.7.0
