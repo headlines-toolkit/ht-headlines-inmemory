@@ -12,11 +12,7 @@ dependencies:
     git: 
       url: https://github.com/Headlines-Toolkit/ht-headlines-client.git
       ref: main
-  ht_shared:
-    git: 
-      url: https://github.com/Headlines-Toolkit/ht-shared.git
-      ref: main
-
+  
 dev_dependencies:
   mocktail: ^1.0.4
   test: ^1.25.15
