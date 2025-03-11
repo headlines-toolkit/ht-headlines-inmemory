@@ -24,6 +24,15 @@ void main() {
     });
 
     test(
+      'constructor initializes with mock headlines when initialHeadlines is null',
+      () async {
+        final nullClient = InMemoryHtHeadlinesClient();
+        final headlines = await nullClient.getHeadlines();
+        expect(headlines, equals(mockHeadlines));
+      },
+    );
+
+    test(
       'getHeadlines returns all headlines when no filters are applied',
       () async {
         final headlines = await client.getHeadlines();
