@@ -6,9 +6,6 @@ concurrency:
 
 on:
   push:
-    paths:
-      - "packages/ht_headlines_inmemory/**"
-      - ".github/workflows/ht_headlines_inmemory.yaml"
     branches:
       - main
 
