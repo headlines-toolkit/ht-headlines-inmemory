@@ -11,6 +11,18 @@ void main() {
       client = InMemoryHtHeadlinesClient(initialHeadlines: mockHeadlines);
     });
 
+    test('constructor initializes with provided headlines', () async {
+      final customHeadlines = [
+        const Headline(id: 'custom1', title: 'Custom Headline 1'),
+        const Headline(id: 'custom2', title: 'Custom Headline 2'),
+      ];
+      final customClient = InMemoryHtHeadlinesClient(
+        initialHeadlines: customHeadlines,
+      );
+      final headlines = await customClient.getHeadlines();
+      expect(headlines, equals(customHeadlines));
+    });
+
     test(
       'getHeadlines returns all headlines when no filters are applied',
       () async {
