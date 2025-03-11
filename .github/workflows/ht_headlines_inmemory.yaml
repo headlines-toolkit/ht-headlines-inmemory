@@ -1,0 +1,22 @@
+name: ht_headlines_inmemory
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    paths:
+      - "packages/ht_headlines_inmemory/**"
+      - ".github/workflows/ht_headlines_inmemory.yaml"
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
+    with:
+      dart_sdk: 3.7.0
+      working_directory: packages/ht_headlines_inmemory
+      min_coverage: 100
+      coverage_excludes: "*.g.dart"
