@@ -16,7 +16,6 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
     with:
-      concurrency: true
       dart_sdk: 3.7.0
       min_coverage: 100
       coverage_excludes: "*.g.dart"
