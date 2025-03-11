@@ -1,4 +1,3 @@
-
 import 'package:ht_headlines_client/ht_headlines_client.dart';
 import 'package:ht_headlines_inmemory/ht_headlines_inmemory.dart';
 import 'package:ht_headlines_inmemory/src/mock_headlines.dart';

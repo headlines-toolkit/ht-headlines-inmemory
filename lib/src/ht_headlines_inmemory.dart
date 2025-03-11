@@ -35,7 +35,7 @@ class InMemoryHtHeadlinesClient extends HtHeadlinesClient {
   @override
   Future<Headline?> getHeadline({required String id}) async {
     try {
-      return _headlines.firstWhere((h) => h.id == id);     
+      return _headlines.firstWhere((h) => h.id == id);
     } catch (_) {
       throw HeadlineNotFoundException('Headline with id $id not found');
     }

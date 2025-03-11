@@ -67,16 +67,43 @@ String _generateDescription(int i) {
 }
 
 String _generateSource(int i) {
-  final sources = ['Reuters', 'Associated Press', 'BBC News', 'CNN', 'The New York Times'];
+  final sources = [
+    'Reuters',
+    'Associated Press',
+    'BBC News',
+    'CNN',
+    'The New York Times',
+  ];
   return sources[i % sources.length];
 }
 
 String _generateCategory(int i) {
-  final categories = ['Business', 'Health', 'Technology', 'Politics', 'Science', 'World', 'Finance', 'Travel', 'Culture'];
+  final categories = [
+    'Business',
+    'Health',
+    'Technology',
+    'Politics',
+    'Science',
+    'World',
+    'Finance',
+    'Travel',
+    'Culture',
+  ];
   return categories[i % categories.length];
 }
 
 String _generateCountry(int i) {
-  final countries = ['US', 'UK', 'CA', 'AU', 'DE', 'FR', 'JP', 'CN', 'IN', 'BR'];
+  final countries = [
+    'US',
+    'UK',
+    'CA',
+    'AU',
+    'DE',
+    'FR',
+    'JP',
+    'CN',
+    'IN',
+    'BR',
+  ];
   return countries[i % countries.length];
 }
