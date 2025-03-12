@@ -110,10 +110,10 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "2717dffa08a3641fd8847aa10dc24f1ba9e22cd3"
+      resolved-ref: "70e5385f4e822b243a2bab4c490f144574b539c2"
       url: "https://github.com/Headlines-Toolkit/ht-headlines-client.git"
     source: git
-    version: "1.0.0"
+    version: "0.0.0"
   http_multi_server:
     dependency: transitive
     description:
