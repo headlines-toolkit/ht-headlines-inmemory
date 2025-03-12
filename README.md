@@ -23,7 +23,7 @@ To use this package, add `ht_headlines_inmemory` as a dependency in your `pubspe
 dependencies:
   ht_headlines_inmemory:
     git:
-      url: https://github.com/Headlines-Toolkit/ht-headlines-inmemory.git
+      url: https://github.com/headlines-toolkit/ht-headlines-inmemory.git
       ref: main
 ```
 
