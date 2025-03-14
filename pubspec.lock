@@ -110,8 +110,8 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "70e5385f4e822b243a2bab4c490f144574b539c2"
-      url: "https://github.com/Headlines-Toolkit/ht-headlines-client.git"
+      resolved-ref: "825cc8641c5e6190f130684173b64f3c102fb0c1"
+      url: "https://github.com/headlines-toolkit/ht-headlines-client.git"
     source: git
     version: "0.0.0"
   http_multi_server:
