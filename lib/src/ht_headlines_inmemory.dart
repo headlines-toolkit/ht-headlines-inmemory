@@ -5,9 +5,9 @@ import 'package:ht_headlines_inmemory/src/mock_headlines.dart';
 /// An in-memory implementation of the [HtHeadlinesClient] abstract class.
 /// This implementation is useful for testing and development purposes.
 /// {@endtemplate}
-class InMemoryHtHeadlinesClient extends HtHeadlinesClient {
+class HtInMemoryHeadlinesClient extends HtHeadlinesClient {
   /// {@macro in_memory_ht_headlines_client}
-  InMemoryHtHeadlinesClient({List<Headline>? initialHeadlines})
+  HtInMemoryHeadlinesClient({List<Headline>? initialHeadlines})
     : _headlines = initialHeadlines ?? mockHeadlines;
 
   final List<Headline> _headlines;

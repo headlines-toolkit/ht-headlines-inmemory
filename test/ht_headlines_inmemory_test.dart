@@ -5,10 +5,10 @@ import 'package:test/test.dart';
 
 void main() {
   group('InMemoryHtHeadlinesClient', () {
-    late InMemoryHtHeadlinesClient client;
+    late HtInMemoryHeadlinesClient client;
 
     setUp(() {
-      client = InMemoryHtHeadlinesClient(initialHeadlines: mockHeadlines);
+      client = HtInMemoryHeadlinesClient(initialHeadlines: mockHeadlines);
     });
 
     test('constructor initializes with provided headlines', () async {
@@ -16,7 +16,7 @@ void main() {
         const Headline(id: 'custom1', title: 'Custom Headline 1'),
         const Headline(id: 'custom2', title: 'Custom Headline 2'),
       ];
-      final customClient = InMemoryHtHeadlinesClient(
+      final customClient = HtInMemoryHeadlinesClient(
         initialHeadlines: customHeadlines,
       );
       final headlines = await customClient.getHeadlines();
@@ -26,7 +26,7 @@ void main() {
     test(
       'constructor initializes with mock headlines when initialHeadlines is null',
       () async {
-        final nullClient = InMemoryHtHeadlinesClient();
+        final nullClient = HtInMemoryHeadlinesClient();
         final headlines = await nullClient.getHeadlines();
         expect(headlines, equals(mockHeadlines));
       },

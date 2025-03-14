@@ -4,7 +4,7 @@ This package provides an in-memory implementation of the `HtHeadlinesClient` int
 
 ## Features
 
-The `InMemoryHtHeadlinesClient` class provides the following features, mirroring the `HtHeadlinesClient` interface:
+The **`HtInMemoryHeadlinesClient`** class provides the following features, mirroring the `HtHeadlinesClient` interface:
 
 *   Create new headlines.
 *   Retrieve headlines by ID.
@@ -27,29 +27,29 @@ dependencies:
       ref: main
 ```
 
-Then simply instantiate the `InMemoryHtHeadlinesClient`:
+Then simply instantiate the `HtInMemoryHeadlinesClient`:
 
 ```dart
 import 'package:ht_headlines_inmemory/ht_headlines_inmemory.dart';
 
-final client = InMemoryHtHeadlinesClient(); // Use default mock headlines
+final client = HtInMemoryHeadlinesClient(); // Use default mock headlines
 
 // Or, initialize with your own list of headlines:
 final myHeadlines = [/* ... your Headline objects ... */];
-final customClient = InMemoryHtHeadlinesClient(initialHeadlines: myHeadlines);
+final customClient = HtInMemoryHeadlinesClient(initialHeadlines: myHeadlines);
 
 ```
 
 ## Usage
 
-Here are some examples of how to use the `InMemoryHtHeadlinesClient`:
+Here are some examples of how to use the `HtInMemoryHeadlinesClient`:
 
 ```dart
 import 'package:ht_headlines_client/ht_headlines_client.dart';
 import 'package:ht_headlines_inmemory/ht_headlines_inmemory.dart';
 
 void main() async {
-  final client = InMemoryHtHeadlinesClient();
+  final client = HtInMemoryHeadlinesClient();
 
   // Create a new headline
   final newHeadline = Headline(
