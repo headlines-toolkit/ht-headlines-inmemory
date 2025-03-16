@@ -90,15 +90,37 @@ class HtInMemoryHeadlinesClient extends HtHeadlinesClient {
   }
 
   @override
-  Future<List<Headline>> searchHeadlines({required String query}) async {
+  Future<List<Headline>> searchHeadlines({
+    required String query,
+    int? limit,
+    String? startAfterId,
+  }) async {
     final lowerCaseQuery = query.toLowerCase();
-    return _headlines
+    var filteredHeadlines = _headlines
         .where(
           (h) =>
               h.title.toLowerCase().contains(lowerCaseQuery) ||
               (h.description?.toLowerCase().contains(lowerCaseQuery) ?? false),
         )
         .toList();
+
+    // Handle pagination
+    if (startAfterId != null) {
+      final startIndex = filteredHeadlines.indexWhere(
+        (h) => h.id == startAfterId,
+      );
+      if (startIndex != -1) {
+        filteredHeadlines = filteredHeadlines.sublist(startIndex + 1);
+      }
+    }
+
+    if (limit != null) {
+      filteredHeadlines = filteredHeadlines.length > limit
+          ? filteredHeadlines.sublist(0, limit)
+          : filteredHeadlines;
+    }
+
+    return filteredHeadlines;
   }
 
   @override
