@@ -220,5 +220,38 @@ void main() {
         expect(headlines, isEmpty);
       },
     );
+
+    test(
+      'searchHeadlines returns limited headlines when limit is applied',
+      () async {
+        const query = 'a';
+        const limit = 2;
+        final headlines = await client.searchHeadlines(query: query, limit: limit);
+        expect(headlines.length, limit);
+      },
+    );
+
+    test(
+      'searchHeadlines returns headlines starting after the given ID when startAfterId is applied',
+      () async {
+        const query = 'a';
+        const startAfterId = '2';
+        final headlines = await client.searchHeadlines(
+          query: query,
+          startAfterId: startAfterId,
+        );
+        final allMatchingHeadlines = mockHeadlines.where(
+          (h) =>
+              h.title.toLowerCase().contains(query.toLowerCase()) ||
+              (h.description?.toLowerCase().contains(query.toLowerCase()) ??
+                  false),
+        ).toList();
+        final startIndex = allMatchingHeadlines.indexWhere(
+          (h) => h.id == startAfterId,
+        );
+        final expectedHeadlines = allMatchingHeadlines.sublist(startIndex + 1);
+        expect(headlines, equals(expectedHeadlines));
+      },
+    );
   });
 }
