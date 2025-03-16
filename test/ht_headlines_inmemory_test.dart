@@ -226,7 +226,10 @@ void main() {
       () async {
         const query = 'a';
         const limit = 2;
-        final headlines = await client.searchHeadlines(query: query, limit: limit);
+        final headlines = await client.searchHeadlines(
+          query: query,
+          limit: limit,
+        );
         expect(headlines.length, limit);
       },
     );
@@ -240,12 +243,17 @@ void main() {
           query: query,
           startAfterId: startAfterId,
         );
-        final allMatchingHeadlines = mockHeadlines.where(
-          (h) =>
-              h.title.toLowerCase().contains(query.toLowerCase()) ||
-              (h.description?.toLowerCase().contains(query.toLowerCase()) ??
-                  false),
-        ).toList();
+        final allMatchingHeadlines =
+            mockHeadlines
+                .where(
+                  (h) =>
+                      h.title.toLowerCase().contains(query.toLowerCase()) ||
+                      (h.description?.toLowerCase().contains(
+                            query.toLowerCase(),
+                          ) ??
+                          false),
+                )
+                .toList();
         final startIndex = allMatchingHeadlines.indexWhere(
           (h) => h.id == startAfterId,
         );

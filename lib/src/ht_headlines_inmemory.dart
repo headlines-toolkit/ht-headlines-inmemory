@@ -96,13 +96,15 @@ class HtInMemoryHeadlinesClient extends HtHeadlinesClient {
     String? startAfterId,
   }) async {
     final lowerCaseQuery = query.toLowerCase();
-    var filteredHeadlines = _headlines
-        .where(
-          (h) =>
-              h.title.toLowerCase().contains(lowerCaseQuery) ||
-              (h.description?.toLowerCase().contains(lowerCaseQuery) ?? false),
-        )
-        .toList();
+    var filteredHeadlines =
+        _headlines
+            .where(
+              (h) =>
+                  h.title.toLowerCase().contains(lowerCaseQuery) ||
+                  (h.description?.toLowerCase().contains(lowerCaseQuery) ??
+                      false),
+            )
+            .toList();
 
     // Handle pagination
     if (startAfterId != null) {
@@ -115,9 +117,10 @@ class HtInMemoryHeadlinesClient extends HtHeadlinesClient {
     }
 
     if (limit != null) {
-      filteredHeadlines = filteredHeadlines.length > limit
-          ? filteredHeadlines.sublist(0, limit)
-          : filteredHeadlines;
+      filteredHeadlines =
+          filteredHeadlines.length > limit
+              ? filteredHeadlines.sublist(0, limit)
+              : filteredHeadlines;
     }
 
     return filteredHeadlines;
