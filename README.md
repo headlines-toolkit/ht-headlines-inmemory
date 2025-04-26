@@ -1,6 +1,6 @@
 # ht_headlines_inmemory
 
-> **Note:** This package is being archived. Please use the successor package [`ht-crud-inmemory`](https://github.com/headlines-toolkit/ht-crud-inmemory) instead.
+> **Note:** This package is being archived. Please use the successor package [`ht-data-inmemory`](https://github.com/headlines-toolkit/ht-data-inmemory) instead.
 
 This package provides an in-memory implementation of the `HtHeadlinesClient` interface. It's primarily intended for testing and development purposes, allowing you to simulate interactions with a headlines data source without needing a real database or network connection.
 
